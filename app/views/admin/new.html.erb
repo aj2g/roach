@@ -1,0 +1,19 @@
+<html>
+  
+
+<center><div style=" width:25%">
+  
+<h2>Please fill out the information below</h2>
+<br>
+
+
+     <%= form_for(:session) do |f| %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    
+
+<% end %>
+</div></center>

@@ -1,0 +1,22 @@
+<html>
+  
+
+<center><div style=" width:25%">
+  
+<h2>Please fill out the information below</h2>
+<br>
+<%= form_for @page do |f| %>
+
+    <%= f.label "Post Title" %> <br>
+    <%= f.text_field :title, class: "form-control" %> <br>
+    <br>
+    <%= f.label "Post Body" %> <br>
+    <%= f.text_area :body, class: "form-control" %> <br>
+    <br>
+    <%= f.label "Video" %> <br>
+    <%= f.file_field :video, class: "form-control" %> <br>
+    <br>
+    <%= f.submit class: "btn btn-default" %>
+
+<% end %>
+</div></center>

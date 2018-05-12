@@ -1,0 +1,14 @@
+<%= link_to "edit this post", edit_page_path(@video) %>
+<br>
+
+
+<%= link_to "back to dashboard", admin_dashboard_path %>
+<br>
+
+<%= @video.title %>
+<br>
+<%= @video.body %>
+
+<%= video_tag @video.video_url.to_s, :controls =>true %>
+
+<%= button_to "delete this post", @video, :method => :delete %>
