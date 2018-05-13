@@ -20,7 +20,7 @@ class PagesController < ApplicationController
         else
             @page = Page.create!(page_params)
         
-            redirect_to index_path
+            redirect_to admin_dashboard_path
         end
     end
     
