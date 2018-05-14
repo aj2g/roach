@@ -41,13 +41,13 @@ Rails.application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
   
-  config.paperclip_defaults = {
+ config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
-    bucket: ENV.fetch('hustonrochbucket'),
-    access_key_id: ENV.fetch('AKIAIMFQV3ZOOG3DQD6A'),
-    secret_access_key: ENV.fetch('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'),
-    s3_region: ENV.fetch('us-east-1'),
+    bucket: ENV['hustonrochbucket'],
+    access_key_id: ENV['AKIAIMFQV3ZOOG3DQD6A'],
+    secret_access_key: ENV['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'],
+    s3_region: ENV['us-east-1'],
   }
 }
 
