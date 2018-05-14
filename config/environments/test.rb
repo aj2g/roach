@@ -29,7 +29,7 @@ Rails.application.configure do
   config.action_controller.allow_forgery_protection = false
 
   # Store uploaded files on the local file system in a temporary directory
-  config.active_storage.service = :test
+  config.active_storage.service = :amazon
 
   config.action_mailer.perform_caching = false
 
@@ -47,7 +47,7 @@ Rails.application.configure do
     bucket: ENV['hustonrochbucket'],
     access_key_id: ENV['AKIAIMFQV3ZOOG3DQD6A'],
     secret_access_key: ENV['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'],
-    s3_region: ENV['US_East'],
+    s3_region: ENV['us-east-1'],
   }
 }
 
