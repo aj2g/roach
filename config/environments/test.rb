@@ -29,7 +29,7 @@ Rails.application.configure do
   config.action_controller.allow_forgery_protection = false
 
   # Store uploaded files on the local file system in a temporary directory
-  config.active_storage.service = :amazon
+  config.active_storage.service = :test
 
   config.action_mailer.perform_caching = false
 
@@ -44,10 +44,10 @@ Rails.application.configure do
   config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
-    bucket: ENV['hustonrochbucket'],
-    access_key_id: ENV['AKIAIMFQV3ZOOG3DQD6A'],
-    secret_access_key: ENV['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'],
-    s3_region: ENV['us-east-1'],
+    bucket: ENV.fetch('hustonrochbucket'),
+    access_key_id: ENV.fetch('AKIAIMFQV3ZOOG3DQD6A'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('us-east-1'),
   }
 }
 

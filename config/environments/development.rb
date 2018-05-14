@@ -28,7 +28,7 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
-  config.active_storage.service = :amazon
+  config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -61,15 +61,14 @@ Rails.application.configure do
   
   Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin'
   
- config.paperclip_defaults = {
+  config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
-    bucket: ENV['hustonrochbucket'],
-    access_key_id: ENV['AKIAIMFQV3ZOOG3DQD6A'],
-    secret_access_key: ENV['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'],
-    s3_region: ENV['us-east-1'],
+    bucket: ENV.fetch('hustonrochbucket'),
+    access_key_id: ENV.fetch('AKIAIMFQV3ZOOG3DQD6A'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('us-east-1'),
   }
 }
-
 
 end
