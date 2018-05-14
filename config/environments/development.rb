@@ -60,4 +60,15 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
   Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin'
+  
+  config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('hustonrochbucket'),
+    access_key_id: ENV.fetch('AKIAIMFQV3ZOOG3DQD6A'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('US_East'),
+  }
+}
+
 end
